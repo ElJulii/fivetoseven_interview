@@ -1,0 +1,27 @@
+.logo {
+  width: 25%;
+}
+
+.button {
+  padding: 12px 20px;
+  background: 
+    linear-gradient(#0f0f17, #0f0f17) padding-box,
+    linear-gradient(to bottom, #FB8627, #F5BEF6) border-box;
+  font-size: 0.8em;
+  min-width: 150px;
+  border-radius: 20px;
+}
+
+.button:hover {
+  background: linear-gradient(#FB8627, #F5BEF6) padding-box;
+}
+
+.button:focus {
+  outline: none;
+}
+
+@media screen and (width > 600px) {
+  .logo {
+    width: 40%;
+  }
+}
