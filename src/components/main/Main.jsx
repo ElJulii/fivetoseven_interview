@@ -11,12 +11,16 @@ export default function Main() {
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const response = await fetch("/news.json")
+                const response = await fetch(`${import.meta.env.BASE_URL}news.json`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json()
 
                 setTimeout(() => {
                     setNews(data)
                     setLoading(false)
+                    console.log(data)
                 }, 1000)
             } catch (error) {
                 console.error("it was an error fetching: ", error)
@@ -43,7 +47,7 @@ export default function Main() {
                     <div 
                         className={Styles.single__img}
                         style={{
-                            background: `url(${selectedNews.image}) center / cover no-repeat`
+                            background: `url(${import.meta.env.BASE_URL}${item.image})  center / cover no-repeat`
                         }}
                     ></div>
                     <div className={Styles.single__info}>
