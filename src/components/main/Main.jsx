@@ -47,7 +47,7 @@ export default function Main() {
                     <div 
                         className={Styles.single__img}
                         style={{
-                            background: `url(${import.meta.env.BASE_URL}${item.image})  center / cover no-repeat`
+                            background: `url(${selectedNews.image})  center / cover no-repeat`
                         }}
                     ></div>
                     <div className={Styles.single__info}>
